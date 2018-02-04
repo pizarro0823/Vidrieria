@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{486A66BD-A238-4024-B502-7AC4EF51B34E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AplicationProduccion</RootNamespace>
+    <AssemblyName>AplicationProduccion</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.4\lib\net451\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clases\Conexion.cs" />
+    <Compile Include="Clientes\IngresarClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes\IngresarClientes.Designer.cs">
+      <DependentUpon>IngresarClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\Consultar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\Consultar.Designer.cs">
+      <DependentUpon>Consultar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\MenuOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\MenuOptions.Designer.cs">
+      <DependentUpon>MenuOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cotizaciones\CotizacionVentanas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cotizaciones\CotizacionVentanas.Designer.cs">
+      <DependentUpon>CotizacionVentanas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cotizaciones\Cotizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cotizaciones\Cotizar.Designer.cs">
+      <DependentUpon>Cotizar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gastos\BuscarCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gastos\BuscarCompras.Designer.cs">
+      <DependentUpon>BuscarCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gastos\Ocompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gastos\Ocompra.Designer.cs">
+      <DependentUpon>Ocompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ingresos\Facturador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ingresos\Facturador.Designer.cs">
+      <DependentUpon>Facturador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio\Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inicio\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prestamos\Abonos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prestamos\Abonos.Designer.cs">
+      <DependentUpon>Abonos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prestamos\ConsultaPrestamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prestamos\ConsultaPrestamos.Designer.cs">
+      <DependentUpon>ConsultaPrestamos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prestamos\Prestamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prestamos\Prestamos.Designer.cs">
+      <DependentUpon>Prestamos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Clientes\IngresarClientes.resx">
+      <DependentUpon>IngresarClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\Consultar.resx">
+      <DependentUpon>Consultar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\MenuOptions.resx">
+      <DependentUpon>MenuOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cotizaciones\CotizacionVentanas.resx">
+      <DependentUpon>CotizacionVentanas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cotizaciones\Cotizar.resx">
+      <DependentUpon>Cotizar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gastos\BuscarCompras.resx">
+      <DependentUpon>BuscarCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gastos\Ocompra.resx">
+      <DependentUpon>Ocompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ingresos\Facturador.resx">
+      <DependentUpon>Facturador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inicio\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prestamos\Abonos.resx">
+      <DependentUpon>Abonos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prestamos\ConsultaPrestamos.resx">
+      <DependentUpon>ConsultaPrestamos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prestamos\Prestamos.resx">
+      <DependentUpon>Prestamos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Imagenes\Logo.png" />
+    <Content Include="Imagenes\Logo2.ico" />
+    <Content Include="Imagenes\Logo2.png" />
+    <Content Include="MetroFramework.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
