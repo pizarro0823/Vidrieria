@@ -17,7 +17,7 @@ namespace AplicationProduccion.Ingresos
         public Facturador()
         {
             InitializeComponent();
-           
+
             dataGridView1.AllowUserToAddRows = false;
 
 
@@ -43,7 +43,7 @@ namespace AplicationProduccion.Ingresos
                 DataTable dt = new DataTable();
                 SqlConnection cnx = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString);
                 cnx.Open();
-                SqlCommand cmd = new SqlCommand("insert into Ventas_Diarias values('" + textBoxVentas_Nombre.Text + "', '" + textBoxVentas_Cedula.Text + "', '" + textBoxVentas_Direccion.Text + "', '" + textBoxVentas_Telefono.Text + "', '" + textBoxVentas_Detalle.Text + "', " + textBoxVentas_CodigoVendedor.Text + ", '" + dateTime_ventas.Text + "', " + textBoxVentas_Valor.Text.Replace(".", "") + ", " + textBoxVentas_Anticipo.Text.Replace(".", "") + ", " + textBoxVentas_Cantidad.Text + ", '" + FormaPago + "', " + textBox_Ventas_Nfactura.Text + ", '" + Estado_Factura + "','"+dateTime_ventas.Text+"',"+ textBox_Ventas_Nabono.Text+")", cnx);
+                SqlCommand cmd = new SqlCommand("insert into Ventas_Diarias values('" + textBoxVentas_Nombre.Text + "', '" + textBoxVentas_Cedula.Text + "', '" + textBoxVentas_Direccion.Text + "', '" + textBoxVentas_Telefono.Text + "', '" + textBoxVentas_Detalle.Text + "', " + textBoxVentas_CodigoVendedor.Text + ", '" + dateTime_ventas.Text + "', " + textBoxVentas_Valor.Text.Replace(".", "") + ", " + textBoxVentas_Anticipo.Text.Replace(".", "") + ", " + textBoxVentas_Cantidad.Text + ", '" + FormaPago + "', " + textBox_Ventas_Nfactura.Text + ", '" + Estado_Factura + "','" + dateTime_ventas.Text + "'," + textBox_Ventas_Nabono.Text + ")", cnx);
                 SqlDataAdapter dp = new SqlDataAdapter(cmd);
                 dp.Fill(dt);
                 cnx.Close();
@@ -79,7 +79,7 @@ namespace AplicationProduccion.Ingresos
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             textBoxVentas_Nombre.Text = dataGridView1.CurrentRow.Cells["nombreCliente"].Value.ToString();
             textBoxVentas_Cedula.Text = dataGridView1.CurrentRow.Cells["cedula"].Value.ToString();
@@ -101,30 +101,60 @@ namespace AplicationProduccion.Ingresos
         {
             if (string.IsNullOrEmpty(textBoxVentas_Nombre.Text))
             {
-                
+
             }
             else
             {
 
                 dataGridView1.DataSource = cnx.conexionDBR("select Numero_factura,Numero_anticipo,nombreCliente,cedula,Direccion,Telefono,Detalle,Codigo_Vendedor,fecha_factura,Valor,Anticipo,Cantidad,Modo_de_pago,Estado,fecha_anticipo" +
                                                     " from Ventas_Diarias where nombreCliente like '%" + textBoxVentas_Nombre.Text + "%'");
-            } if (string.IsNullOrEmpty(textBox_Ventas_Nfactura.Text))
+            }
+            if (string.IsNullOrEmpty(textBox_Ventas_Nfactura.Text))
             {
-                
+
             }
             else
             {
                 dataGridView1.DataSource = cnx.conexionDBR("select Numero_factura,Numero_anticipo,nombreCliente,cedula,Direccion,Telefono,Detalle,Codigo_Vendedor,fecha_factura,Valor,Anticipo,Cantidad,Modo_de_pago,Estado,fecha_anticipo" +
                                                  " from Ventas_Diarias where Numero_factura = " + textBox_Ventas_Nfactura.Text + "");
+
+                ///Este datagrid View esta oculto detras del datagridview1
+                ///Solo se utiliza como ayuda para poder mostrar el valor de restante
+                dataGridView3.DataSource = cnx.conexionDBR("select  Numero_factura,count(*) as Numero_de_facturas,Valor,sum(Anticipo) as abonos, (valor-sum(Anticipo)) as Restante" +
+                                                           " from Ventas_Diarias where Numero_factura = " + textBox_Ventas_Nfactura.Text + " GROUP BY Numero_factura, Valor");
+
+                label6.Text = "" + dataGridView1.Rows.Cast<DataGridViewRow>().Max(x => Convert.ToInt32(x.Cells["Valor"].Value)).ToString("0,0");
+                label19.Text = "" + dataGridView1.Rows.Cast<DataGridViewRow>().Sum(x => Convert.ToInt32(x.Cells["Anticipo"].Value)).ToString("0,0");
+                label30.Text = "" + dataGridView3.Rows.Cast<DataGridViewRow>().Max(x => Convert.ToInt32(x.Cells["Restante"].Value)).ToString("0,0");
+
             }
-            
-            label6.Text = "" + dataGridView1.Rows.Cast<DataGridViewRow>().Max(x => Convert.ToInt32(x.Cells["Valor"].Value)).ToString("0,0");
-            label19.Text = "" + dataGridView1.Rows.Cast<DataGridViewRow>().Sum(x => Convert.ToInt32(x.Cells["Anticipo"].Value)).ToString("0,0");
+
+
+
+
+
+
+
             this.dataGridView1.Columns["Valor"].Visible = false;
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            textBoxVentas_Anticipo.Clear();
+            textBoxVentas_Cantidad.Clear();
+            textBoxVentas_Cedula.Clear();
+            textBoxVentas_CodigoVendedor.Clear();
+            textBoxVentas_Detalle.Clear();
+            textBoxVentas_Direccion.Clear();
+            textBoxVentas_Nombre.Clear();
+            textBoxVentas_Telefono.Clear();
+            textBoxVentas_Valor.Clear();
+            textBox_Ventas_Nabono.Clear();
+            textBox_Ventas_Nfactura.Clear();
         }
     }
 }
