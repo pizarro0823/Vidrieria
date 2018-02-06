@@ -160,5 +160,15 @@ namespace AplicationProduccion.Gastos
                 e.Handled = false;
             }
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBoxAlmacen.Text = dataGridView1.CurrentRow.Cells["Nombre_Almacen"].Value.ToString();
+            textBoxNit.Text = dataGridView1.CurrentRow.Cells["Nit_Empresa"].Value.ToString();
+            comboBoxClasificacion.Text = dataGridView1.CurrentRow.Cells["clasificacion"].Value.ToString();
+            comboBoxRaiz.Text= dataGridView1.CurrentRow.Cells["Raiz"].Value.ToString();
+            comboBoxEstado.Text= dataGridView1.CurrentRow.Cells["estado"].Value.ToString();
+            textBoxCantidad.Text = dataGridView1.CurrentRow.Cells["cantidad_ingreso"].Value.ToString();
+        }
     }
 }

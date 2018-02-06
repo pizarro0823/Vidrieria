@@ -19,6 +19,7 @@ namespace AplicationProduccion.Ingresos
             InitializeComponent();
 
             dataGridView1.AllowUserToAddRows = false;
+            dataGridView2.AllowUserToAddRows = false;
 
 
         }
@@ -48,7 +49,7 @@ namespace AplicationProduccion.Ingresos
                 dp.Fill(dt);
                 cnx.Close();
 
-               
+
 
                 MessageBox.Show("<<<<Campos Ingresados Correctamente>>>>");
 
@@ -77,7 +78,6 @@ namespace AplicationProduccion.Ingresos
             textBoxVentas_Valor.Text = dataGridView1.CurrentRow.Cells["Valor"].Value.ToString();
             textBoxVentas_Cantidad.Text = dataGridView1.CurrentRow.Cells["Cantidad"].Value.ToString();
             textBox_Ventas_Nfactura.Text = dataGridView1.CurrentRow.Cells["Numero_factura"].Value.ToString();
-            textBoxVentas_Cantidad.Text = dataGridView1.CurrentRow.Cells["Cantidad"].Value.ToString();
 
         }
 
@@ -150,10 +150,10 @@ namespace AplicationProduccion.Ingresos
 
         #region Ventas por Contratos ....................................////////////////////////////.....................
 
-        public void ingresarContratos()
+        public void ingresarContratos(string formaPago, string estado)
         {
 
-            if (String.IsNullOrEmpty(textBoxVentas_Nombre.Text) | String.IsNullOrEmpty(textBoxVentas_Cedula.Text) | String.IsNullOrEmpty(textBoxVentas_Direccion.Text) | String.IsNullOrEmpty(textBoxVentas_Telefono.Text) | String.IsNullOrEmpty(textBoxVentas_Detalle.Text) | String.IsNullOrEmpty(textBoxVentas_CodigoVendedor.Text) | String.IsNullOrEmpty(dateTime_ventas.Text) | String.IsNullOrEmpty(textBoxVentas_Valor.Text) | String.IsNullOrEmpty(textBoxVentas_Anticipo.Text) | String.IsNullOrEmpty(textBoxVentas_Cantidad.Text) | String.IsNullOrEmpty(checkBoxVentas_Efectivo.Text) | String.IsNullOrEmpty(checkBoxVentas_Tarjeta.Text))
+            if (String.IsNullOrEmpty(textBoxContratos_nombre.Text) | String.IsNullOrEmpty(textBoxContratos_Cedula.Text) | String.IsNullOrEmpty(textBoxContratos_Direcciones.Text) | String.IsNullOrEmpty(textBoxContratos_Telefonos.Text) | String.IsNullOrEmpty(textBoxContratos_Detalle.Text) | String.IsNullOrEmpty(textBoxContratos_CodigoVendedor.Text) | String.IsNullOrEmpty(dateTimePickerContratos.Text) | String.IsNullOrEmpty(textBoxContratos_Valor.Text) | String.IsNullOrEmpty(textBoxContratos_anticipo.Text) | String.IsNullOrEmpty(textBoxContratos_Cantidad.Text) | String.IsNullOrEmpty(checkBoxContratos_Efectivo.Text) | String.IsNullOrEmpty(checkBoxContratos_Tarjeta.Text))
             {
                 MessageBox.Show("Error Faltan Campos Por llenar");
             }
@@ -164,11 +164,10 @@ namespace AplicationProduccion.Ingresos
                 DataTable dt = new DataTable();
                 SqlConnection cnx = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString);
                 cnx.Open();
-                SqlCommand cmd = new SqlCommand("insert into Ventas_Diarias values('" + textBoxVentas_Nombre.Text + "', '" + textBoxVentas_Cedula.Text + "', '" + textBoxVentas_Direccion.Text + "', '" + textBoxVentas_Telefono.Text + "', '" + textBoxVentas_Detalle.Text + "', " + textBoxVentas_CodigoVendedor.Text + ", '" + dateTime_ventas.Text + "', " + textBoxVentas_Valor.Text.Replace(".", "") + ", " + textBoxVentas_Anticipo.Text.Replace(".", "") + ", " + textBoxVentas_Cantidad.Text + ", '" + FormaPago + "', " + textBox_Ventas_Nfactura.Text + ", '" + Estado_Factura + "','" + dateTime_ventas.Text + "'," + textBox_Ventas_Nabono.Text + ")", cnx);
+                SqlCommand cmd = new SqlCommand("insert into contratos values('" + textBoxContratos_nombre.Text + "', '" + textBoxContratos_Cedula.Text + "', '" + textBoxContratos_Direcciones.Text + "', '" + textBoxContratos_Telefonos.Text + "', '" + textBoxContratos_Detalle.Text + "', " + textBoxContratos_CodigoVendedor.Text + ", '" + dateTimePickerContratos.Text + "', " + textBoxContratos_Valor.Text.Replace(".", "") + ", " + textBoxContratos_anticipo.Text.Replace(".", "") + ", " + textBoxContratos_Cantidad.Text + ", '" + formaPago + "', " + textBoxContratos_NFactura.Text + ", '" + estado + "','" + dateTimePickerContratos.Text + "'," + textBoxContratos_Nabono.Text + "," + textBoxContratos_Consecutivos.Text + ")", cnx);
                 SqlDataAdapter dp = new SqlDataAdapter(cmd);
                 dp.Fill(dt);
                 cnx.Close();
-
 
 
                 MessageBox.Show("<<<<Campos Ingresados Correctamente>>>>");
@@ -177,9 +176,70 @@ namespace AplicationProduccion.Ingresos
 
         }
 
+        private void buttonRegistar_Click(object sender, EventArgs e)
+        {
+            if (checkBoxContratos_Efectivo.Checked == true)
+            {
+                ingresarContratos("Efectivo", null);
+            }
+            else if (checkBoxContratos_Tarjeta.Checked == true)
+            {
+                ingresarContratos("Tarjeta", null);
+            }
+        }
 
+        private void buttonBuscar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBoxContratos_nombre.Text))
+            {
+
+            }
+            else
+            {
+
+                dataGridView2.DataSource = cnx.conexionDBR("select Numero_factura,N_Cosecutivo_Abono,Numero_anticipo,nombreCliente,cedula,Direccion,Telefono,Detalle,Codigo_Vendedor,fecha_factura,Valor,Anticipo,Cantidad,Modo_de_pago,Estado,fecha_anticipo" +
+                                                    " from contratos where nombreCliente like '%" + textBoxContratos_nombre.Text + "%'");
+            }
+            if (string.IsNullOrEmpty(textBoxContratos_NFactura.Text))
+            {
+
+            }
+            else
+            {
+                dataGridView2.DataSource = cnx.conexionDBR("select Numero_factura,N_Cosecutivo_Abono,Numero_anticipo,nombreCliente,cedula,Direccion,Telefono,Detalle,Codigo_Vendedor,fecha_factura,Valor,Anticipo,Cantidad,Modo_de_pago,Estado,fecha_anticipo" +
+                                                 " from contratos where Numero_factura = " + textBoxContratos_NFactura.Text + "");
+
+                ///Este datagrid View esta oculto detras del datagridview1
+                ///Solo se utiliza como ayuda para poder mostrar el valor de restante
+                dataGridView4.DataSource = cnx.conexionDBR("select  Numero_factura,count(*) as Numero_de_facturas,Valor,sum(Anticipo) as abonos, (valor-sum(Anticipo)) as Restante" +
+                                                           " from contratos where Numero_factura = " + textBoxContratos_NFactura.Text + " GROUP BY Numero_factura, Valor");
+
+                label56.Text = "" + dataGridView2.Rows.Cast<DataGridViewRow>().Max(x => Convert.ToInt32(x.Cells["Valor"].Value)).ToString("0,0");
+                label57.Text = "" + dataGridView2.Rows.Cast<DataGridViewRow>().Sum(x => Convert.ToInt32(x.Cells["Anticipo"].Value)).ToString("0,0");
+                label58.Text = "" + dataGridView4.Rows.Cast<DataGridViewRow>().Max(x => Convert.ToInt32(x.Cells["Restante"].Value)).ToString("0,0");
+
+            }
+
+           this.dataGridView2.Columns["Valor"].Visible = false;
+
+        }
+
+
+
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBoxContratos_nombre.Text = dataGridView2.CurrentRow.Cells["nombreCliente"].Value.ToString();
+            textBoxContratos_Cedula.Text = dataGridView2.CurrentRow.Cells["cedula"].Value.ToString();
+            textBoxContratos_Direcciones.Text = dataGridView2.CurrentRow.Cells["Direccion"].Value.ToString();
+            textBoxContratos_Telefonos.Text = dataGridView2.CurrentRow.Cells["Telefono"].Value.ToString();
+            textBoxContratos_Detalle.Text = dataGridView2.CurrentRow.Cells["Detalle"].Value.ToString();
+            textBoxContratos_Valor.Text = dataGridView2.CurrentRow.Cells["Valor"].Value.ToString();
+            textBoxContratos_Cantidad.Text = dataGridView2.CurrentRow.Cells["Cantidad"].Value.ToString();
+            textBoxContratos_NFactura.Text = dataGridView2.CurrentRow.Cells["Numero_factura"].Value.ToString();
+            textBoxContratos_Consecutivos.Text = dataGridView2.CurrentRow.Cells["N_Cosecutivo_Abono"].Value.ToString();
+
+        }
         #endregion
-
-
     }
 }
