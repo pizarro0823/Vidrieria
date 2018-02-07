@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetalleIngreso));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBoxFiltrado_Especial = new System.Windows.Forms.CheckBox();
             this.checkBoxDetallado = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -40,7 +41,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.checkBoxFiltrado_Especial = new System.Windows.Forms.CheckBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -55,10 +55,12 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(269, 182);
+            this.dataGridView1.Location = new System.Drawing.Point(210, 182);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(668, 251);
+            this.dataGridView1.Size = new System.Drawing.Size(713, 299);
             this.dataGridView1.TabIndex = 0;
             // 
             // groupBox1
@@ -67,17 +69,27 @@
             this.groupBox1.Controls.Add(this.checkBoxDetallado);
             this.groupBox1.Controls.Add(this.checkBox2);
             this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Location = new System.Drawing.Point(7, 63);
+            this.groupBox1.Location = new System.Drawing.Point(11, 182);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(252, 110);
+            this.groupBox1.Size = new System.Drawing.Size(182, 160);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtrar por :";
             // 
+            // checkBoxFiltrado_Especial
+            // 
+            this.checkBoxFiltrado_Especial.AutoSize = true;
+            this.checkBoxFiltrado_Especial.Location = new System.Drawing.Point(13, 101);
+            this.checkBoxFiltrado_Especial.Name = "checkBoxFiltrado_Especial";
+            this.checkBoxFiltrado_Especial.Size = new System.Drawing.Size(103, 17);
+            this.checkBoxFiltrado_Especial.TabIndex = 8;
+            this.checkBoxFiltrado_Especial.Text = "Filtrado Especial";
+            this.checkBoxFiltrado_Especial.UseVisualStyleBackColor = true;
+            // 
             // checkBoxDetallado
             // 
             this.checkBoxDetallado.AutoSize = true;
-            this.checkBoxDetallado.Location = new System.Drawing.Point(126, 32);
+            this.checkBoxDetallado.Location = new System.Drawing.Point(13, 78);
             this.checkBoxDetallado.Name = "checkBoxDetallado";
             this.checkBoxDetallado.Size = new System.Drawing.Size(71, 17);
             this.checkBoxDetallado.TabIndex = 7;
@@ -106,17 +118,17 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(376, 70);
+            this.textBox1.Location = new System.Drawing.Point(99, 82);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(365, 24);
+            this.textBox1.Size = new System.Drawing.Size(342, 24);
             this.textBox1.TabIndex = 5;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(824, 102);
+            this.button1.Location = new System.Drawing.Point(11, 443);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 44);
+            this.button1.Size = new System.Drawing.Size(182, 38);
             this.button1.TabIndex = 6;
             this.button1.Text = "Buscar";
             this.button1.UseVisualStyleBackColor = true;
@@ -135,7 +147,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(299, 73);
+            this.label1.Location = new System.Drawing.Point(22, 85);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 17);
             this.label1.TabIndex = 8;
@@ -145,7 +157,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(281, 116);
+            this.label2.Location = new System.Drawing.Point(8, 126);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 17);
             this.label2.TabIndex = 9;
@@ -153,26 +165,16 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(376, 100);
+            this.textBox2.Location = new System.Drawing.Point(99, 112);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(94, 46);
             this.textBox2.TabIndex = 10;
             // 
-            // checkBoxFiltrado_Especial
-            // 
-            this.checkBoxFiltrado_Especial.AutoSize = true;
-            this.checkBoxFiltrado_Especial.Location = new System.Drawing.Point(126, 55);
-            this.checkBoxFiltrado_Especial.Name = "checkBoxFiltrado_Especial";
-            this.checkBoxFiltrado_Especial.Size = new System.Drawing.Size(103, 17);
-            this.checkBoxFiltrado_Especial.TabIndex = 8;
-            this.checkBoxFiltrado_Especial.Text = "Filtrado Especial";
-            this.checkBoxFiltrado_Especial.UseVisualStyleBackColor = true;
-            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(603, 102);
+            this.dateTimePicker1.Location = new System.Drawing.Point(303, 116);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(138, 20);
             this.dateTimePicker1.TabIndex = 11;
@@ -181,7 +183,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(508, 105);
+            this.label3.Location = new System.Drawing.Point(208, 119);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(93, 12);
             this.label3.TabIndex = 12;
@@ -191,16 +193,17 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(516, 129);
+            this.label4.Location = new System.Drawing.Point(216, 145);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(85, 12);
             this.label4.TabIndex = 13;
             this.label4.Text = "Fecha Abono :";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(603, 126);
+            this.dateTimePicker2.Location = new System.Drawing.Point(303, 142);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(138, 20);
             this.dateTimePicker2.TabIndex = 14;
