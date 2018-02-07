@@ -110,6 +110,12 @@
     <Compile Include="Gastos\Ocompra.Designer.cs">
       <DependentUpon>Ocompra.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ingresos\DetalleIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ingresos\DetalleIngreso.Designer.cs">
+      <DependentUpon>DetalleIngreso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ingresos\Facturador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,12 @@
     </Compile>
     <Compile Include="Inicio\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inicio\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Prestamos\Abonos.cs">
       <SubType>Form</SubType>
@@ -163,11 +175,17 @@
     <EmbeddedResource Include="Gastos\Ocompra.resx">
       <DependentUpon>Ocompra.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ingresos\DetalleIngreso.resx">
+      <DependentUpon>DetalleIngreso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ingresos\Facturador.resx">
       <DependentUpon>Facturador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inicio\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Prestamos\Abonos.resx">
       <DependentUpon>Abonos.cs</DependentUpon>

@@ -75,5 +75,11 @@ namespace AplicationProduccion.Inicio
             }
         }
 
+        private void label3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AplicationProduccion.Inicio.Login login = new Login();
+            login.Show();
+        }
     }
 }

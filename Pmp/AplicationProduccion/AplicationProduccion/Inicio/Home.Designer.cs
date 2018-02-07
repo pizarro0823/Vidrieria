@@ -39,6 +39,7 @@
             this.metroTile7 = new MetroFramework.Controls.MetroTile();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -161,11 +162,23 @@
             this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 9;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label3.Location = new System.Drawing.Point(349, 17);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Iniciar Seccion";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
             // Alvidrios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(432, 413);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.metroTile7);
@@ -198,5 +211,6 @@
         private MetroFramework.Controls.MetroTile metroTile7;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
