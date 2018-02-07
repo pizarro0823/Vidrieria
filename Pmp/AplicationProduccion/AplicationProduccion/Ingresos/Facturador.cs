@@ -44,7 +44,7 @@ namespace AplicationProduccion.Ingresos
                 DataTable dt = new DataTable();
                 SqlConnection cnx = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ConnectionString);
                 cnx.Open();
-                SqlCommand cmd = new SqlCommand("insert into Ventas_Diarias values('" + textBoxVentas_Nombre.Text + "', '" + textBoxVentas_Cedula.Text + "', '" + textBoxVentas_Direccion.Text + "', '" + textBoxVentas_Telefono.Text + "', '" + textBoxVentas_Detalle.Text + "', " + textBoxVentas_CodigoVendedor.Text + ", '" + dateTime_ventas.Text + "', " + textBoxVentas_Valor.Text.Replace(".", "") + ", " + textBoxVentas_Anticipo.Text.Replace(".", "") + ", " + textBoxVentas_Cantidad.Text + ", '" + FormaPago + "', " + textBox_Ventas_Nfactura.Text + ", '" + Estado_Factura + "','" + dateTime_ventas.Text + "'," + textBox_Ventas_Nabono.Text + ")", cnx);
+                SqlCommand cmd = new SqlCommand("insert into Ventas_Diarias values('" + textBoxVentas_Nombre.Text.Trim().ToUpper() + "', '" + textBoxVentas_Cedula.Text.Trim() + "', '" + textBoxVentas_Direccion.Text.Trim().ToUpper() + "', '" + textBoxVentas_Telefono.Text.Trim() + "', '" + textBoxVentas_Detalle.Text.Trim().ToUpper() + "', " + textBoxVentas_CodigoVendedor.Text.Trim() + ", '" + dateTime_ventas.Text.Trim() + "', " + textBoxVentas_Valor.Text.Replace(".", "").Trim() + ", " + textBoxVentas_Anticipo.Text.Replace(".", "").Trim() + ", " + textBoxVentas_Cantidad.Text.Trim() + ", '" + FormaPago + "', " + textBox_Ventas_Nfactura.Text.Trim() + ", '" + Estado_Factura + "','" + dateTime_ventas.Text.Trim() + "'," + textBox_Ventas_Nabono.Text.Trim() + ")", cnx);
                 SqlDataAdapter dp = new SqlDataAdapter(cmd);
                 dp.Fill(dt);
                 cnx.Close();
@@ -114,10 +114,11 @@ namespace AplicationProduccion.Ingresos
                 label6.Text = "" + dataGridView1.Rows.Cast<DataGridViewRow>().Max(x => Convert.ToInt32(x.Cells["Valor"].Value)).ToString("0,0");
                 label19.Text = "" + dataGridView1.Rows.Cast<DataGridViewRow>().Sum(x => Convert.ToInt32(x.Cells["Anticipo"].Value)).ToString("0,0");
                 label30.Text = "" + dataGridView3.Rows.Cast<DataGridViewRow>().Max(x => Convert.ToInt32(x.Cells["Restante"].Value)).ToString("0,0");
+                this.dataGridView1.Columns["Valor"].Visible = false;
+
 
             }
 
-            this.dataGridView1.Columns["Valor"].Visible = false;
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -145,6 +146,120 @@ namespace AplicationProduccion.Ingresos
             AplicationProduccion.Inicio.Alvidrios Inicio = new AplicationProduccion.Inicio.Alvidrios();
             Inicio.Show();
         }
+        private void textBoxVentas_Nombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                textBoxVentas_Cedula.Focus();
+            }
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se permiten Letras");
+            }
+        }
+        private void textBoxVentas_Cedula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                textBoxVentas_Direccion.Focus();
+            }
+
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se permiten Numeros");
+            }
+        }
+
+        private void textBoxVentas_Direccion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                textBoxVentas_Telefono.Focus();
+            }
+        }
+        private void textBoxVentas_Telefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                textBoxVentas_Detalle.Focus();
+            }
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se permiten Numeros");
+            }
+        }
+        private void textBoxVentas_Detalle_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                textBoxVentas_CodigoVendedor.Focus();
+            }
+        }
+        private void textBoxVentas_CodigoVendedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                textBoxVentas_Valor.Focus();
+            }
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se permiten Numeros");
+            }
+        }
+        private void textBoxVentas_Valor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                textBoxVentas_Anticipo.Focus();
+            }
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se permiten Numeros");
+            }
+        }
+        private void textBoxVentas_Anticipo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                textBox_Ventas_Nfactura.Focus();
+            }
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se permiten Numeros");
+            }
+        }
+        private void textBox_Ventas_Nfactura_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                textBox_Ventas_Nabono.Focus();
+            }
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se permiten Numeros");
+            }
+        }
+        private void textBox_Ventas_Nabono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                textBoxVentas_Cantidad.Focus();
+            }
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se permiten Numeros");
+            }
+        }
+        #endregion
+
         #endregion
 
 
@@ -197,7 +312,7 @@ namespace AplicationProduccion.Ingresos
             else
             {
 
-                dataGridView2.DataSource = cnx.conexionDBR("select Numero_factura,N_Cosecutivo_Abono,Numero_anticipo,nombreCliente,cedula,Direccion,Telefono,Detalle,Codigo_Vendedor,fecha_factura,Valor,Anticipo,Cantidad,Modo_de_pago,Estado,fecha_anticipo" +
+                dataGridView2.DataSource = cnx.conexionDBR("select Numero_factura,N_Cosecutivo_Contrato,Numero_anticipo,nombreCliente,cedula,Direccion,Telefono,Detalle,Codigo_Vendedor,fecha_factura,Valor,Anticipo,Cantidad,Modo_de_pago,Estado,fecha_anticipo" +
                                                     " from contratos where nombreCliente like '%" + textBoxContratos_nombre.Text + "%'");
             }
             if (string.IsNullOrEmpty(textBoxContratos_NFactura.Text))
@@ -206,7 +321,7 @@ namespace AplicationProduccion.Ingresos
             }
             else
             {
-                dataGridView2.DataSource = cnx.conexionDBR("select Numero_factura,N_Cosecutivo_Abono,Numero_anticipo,nombreCliente,cedula,Direccion,Telefono,Detalle,Codigo_Vendedor,fecha_factura,Valor,Anticipo,Cantidad,Modo_de_pago,Estado,fecha_anticipo" +
+                dataGridView2.DataSource = cnx.conexionDBR("select Numero_factura,N_Cosecutivo_Contrato,Numero_anticipo,nombreCliente,cedula,Direccion,Telefono,Detalle,Codigo_Vendedor,fecha_factura,Valor,Anticipo,Cantidad,Modo_de_pago,Estado,fecha_anticipo" +
                                                  " from contratos where Numero_factura = " + textBoxContratos_NFactura.Text + "");
 
                 ///Este datagrid View esta oculto detras del datagridview1
@@ -217,10 +332,11 @@ namespace AplicationProduccion.Ingresos
                 label56.Text = "" + dataGridView2.Rows.Cast<DataGridViewRow>().Max(x => Convert.ToInt32(x.Cells["Valor"].Value)).ToString("0,0");
                 label57.Text = "" + dataGridView2.Rows.Cast<DataGridViewRow>().Sum(x => Convert.ToInt32(x.Cells["Anticipo"].Value)).ToString("0,0");
                 label58.Text = "" + dataGridView4.Rows.Cast<DataGridViewRow>().Max(x => Convert.ToInt32(x.Cells["Restante"].Value)).ToString("0,0");
+                this.dataGridView2.Columns["Valor"].Visible = false;
+
 
             }
 
-           this.dataGridView2.Columns["Valor"].Visible = false;
 
         }
 
@@ -237,9 +353,52 @@ namespace AplicationProduccion.Ingresos
             textBoxContratos_Valor.Text = dataGridView2.CurrentRow.Cells["Valor"].Value.ToString();
             textBoxContratos_Cantidad.Text = dataGridView2.CurrentRow.Cells["Cantidad"].Value.ToString();
             textBoxContratos_NFactura.Text = dataGridView2.CurrentRow.Cells["Numero_factura"].Value.ToString();
-            textBoxContratos_Consecutivos.Text = dataGridView2.CurrentRow.Cells["N_Cosecutivo_Abono"].Value.ToString();
+            textBoxContratos_Consecutivos.Text = dataGridView2.CurrentRow.Cells["N_Cosecutivo_Contrato"].Value.ToString();
 
         }
+
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+            textBoxContratos_nombre.Clear();
+            textBoxContratos_Cedula.Clear();
+            textBoxContratos_Direcciones.Clear();
+            textBoxContratos_Telefonos.Clear();
+            textBoxContratos_Detalle.Clear();
+            textBoxContratos_CodigoVendedor.Clear();
+            textBoxContratos_Valor.Clear();
+            textBoxContratos_anticipo.Clear();
+            textBoxContratos_Cantidad.Clear();
+            textBoxContratos_NFactura.Clear();
+            textBoxContratos_Consecutivos.Clear();
+            textBoxContratos_Nabono.Clear();
+        }
+
+
         #endregion
+
+        private void tabControl1_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void tabControl1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+        private void textBox_Ventas_Nabono_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void textBoxVentas_Cantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se permiten Numeros");
+            }
+        }
     }
 }
