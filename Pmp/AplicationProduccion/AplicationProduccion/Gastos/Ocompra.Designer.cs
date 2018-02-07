@@ -175,9 +175,8 @@
             this.textBoxValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxValor.ForeColor = System.Drawing.Color.Red;
             this.textBoxValor.Location = new System.Drawing.Point(715, 134);
-            this.textBoxValor.Multiline = true;
             this.textBoxValor.Name = "textBoxValor";
-            this.textBoxValor.Size = new System.Drawing.Size(203, 65);
+            this.textBoxValor.Size = new System.Drawing.Size(203, 62);
             this.textBoxValor.TabIndex = 15;
             this.textBoxValor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxValor.TextChanged += new System.EventHandler(this.textBoxValor_TextChanged);
@@ -199,9 +198,8 @@
             this.textBoxCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxCantidad.ForeColor = System.Drawing.Color.Red;
             this.textBoxCantidad.Location = new System.Drawing.Point(961, 134);
-            this.textBoxCantidad.Multiline = true;
             this.textBoxCantidad.Name = "textBoxCantidad";
-            this.textBoxCantidad.Size = new System.Drawing.Size(60, 65);
+            this.textBoxCantidad.Size = new System.Drawing.Size(60, 62);
             this.textBoxCantidad.TabIndex = 17;
             this.textBoxCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -251,9 +249,8 @@
             // 
             this.textBoxNoFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNoFactura.Location = new System.Drawing.Point(384, 94);
-            this.textBoxNoFactura.Multiline = true;
             this.textBoxNoFactura.Name = "textBoxNoFactura";
-            this.textBoxNoFactura.Size = new System.Drawing.Size(183, 25);
+            this.textBoxNoFactura.Size = new System.Drawing.Size(183, 26);
             this.textBoxNoFactura.TabIndex = 6;
             // 
             // label3
@@ -283,18 +280,16 @@
             // 
             this.textBoxAlmacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxAlmacen.Location = new System.Drawing.Point(715, 94);
-            this.textBoxAlmacen.Multiline = true;
             this.textBoxAlmacen.Name = "textBoxAlmacen";
-            this.textBoxAlmacen.Size = new System.Drawing.Size(306, 25);
+            this.textBoxAlmacen.Size = new System.Drawing.Size(306, 26);
             this.textBoxAlmacen.TabIndex = 14;
             // 
             // textBoxNit
             // 
             this.textBoxNit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNit.Location = new System.Drawing.Point(384, 134);
-            this.textBoxNit.Multiline = true;
             this.textBoxNit.Name = "textBoxNit";
-            this.textBoxNit.Size = new System.Drawing.Size(183, 25);
+            this.textBoxNit.Size = new System.Drawing.Size(183, 26);
             this.textBoxNit.TabIndex = 16;
             // 
             // label7

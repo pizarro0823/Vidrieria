@@ -26,7 +26,7 @@ namespace AplicationProduccion.Ingresos
 
         AplicationProduccion.Clases.Conexion cnx = new Clases.Conexion();
 
-        #region Ventas Diarias...............////////////////////////////////...............................
+        #region TAG CONTROL VENTAS...............////////////////////////////////...............................
 
 
         public void IngresoDatos_MetroTab_Ventas(string FormaPago, string Estado_Factura)
@@ -146,7 +146,8 @@ namespace AplicationProduccion.Ingresos
             AplicationProduccion.Inicio.Alvidrios Inicio = new AplicationProduccion.Inicio.Alvidrios();
             Inicio.Show();
         }
-        #region Salto de texbox en Ventas
+        #region PROPIEDADES TEXTBOX VENTAS------------------------------------ 
+
         private void textBoxVentas_Nombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
@@ -259,12 +260,19 @@ namespace AplicationProduccion.Ingresos
                 MessageBox.Show("Solo se permiten Numeros");
             }
         }
+        private void textBoxVentas_Cantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se permiten Numeros");
+            }
+        }
         #endregion
 
         #endregion
 
-
-        #region Ventas por Contratos ....................................////////////////////////////.....................
+        #region TAG CONTROL DE LOS CONTRATOS METODOS  ....................................////////////////////////////.....................
 
         public void ingresarContratos(string formaPago, string estado)
         {
@@ -376,6 +384,153 @@ namespace AplicationProduccion.Ingresos
             textBoxContratos_Nabono.Clear();
         }
 
+        #region Propiedades de texbox Contratos-------------
+        private void textBoxContratos_nombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                textBoxContratos_Cedula.Focus();
+            }
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se permiten Letras");
+            }
+        }
+        private void textBoxContratos_Cedula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                textBoxContratos_Direcciones.Focus();
+            }
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se permiten Numeros");
+            }
+        }
+
+        private void textBoxContratos_Direcciones_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                textBoxContratos_Telefonos.Focus();
+            }
+        }
+
+        private void textBoxContratos_Telefonos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                textBoxContratos_Detalle.Focus();
+            }
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se permiten Numeros");
+            }
+        }
+        private void textBoxContratos_Detalle_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                textBoxContratos_CodigoVendedor.Focus();
+            }
+
+        }
+        private void textBoxContratos_CodigoVendedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                textBoxContratos_Valor.Focus();
+            }
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se permiten Numeros");
+            }
+
+
+        }
+        private void textBoxContratos_Valor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                textBoxContratos_anticipo.Focus();
+            }
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se permiten Numeros");
+            }
+        }
+
+        private void textBoxContratos_anticipo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                textBoxContratos_NFactura.Focus();
+            }
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se permiten Numeros");
+            }
+        }
+
+        private void textBoxContratos_NFactura_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                textBoxContratos_Nabono.Focus();
+            }
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se permiten Numeros");
+            }
+        }
+
+        private void textBoxContratos_Nabono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                textBoxContratos_Consecutivos.Focus();
+            }
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se permiten Numeros");
+            }
+
+        }
+
+        private void textBoxContratos_Consecutivos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                textBoxContratos_Cantidad.Focus();
+            }
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se permiten Numeros");
+            }
+        }
+
+        private void textBoxContratos_Cantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                buttonRegistar.Focus();
+            }
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se permiten Numeros");
+            }
+        }
+        #endregion
 
         #endregion
 
@@ -383,7 +538,6 @@ namespace AplicationProduccion.Ingresos
         {
 
         }
-
         private void tabControl1_KeyPress(object sender, KeyPressEventArgs e)
         {
 
@@ -393,13 +547,6 @@ namespace AplicationProduccion.Ingresos
 
         }
 
-        private void textBoxVentas_Cantidad_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsLetter(e.KeyChar))
-            {
-                e.Handled = true;
-                MessageBox.Show("Solo se permiten Numeros");
-            }
-        }
+
     }
 }

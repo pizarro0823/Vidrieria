@@ -309,9 +309,8 @@
             // 
             this.textBoxVentas_Cedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxVentas_Cedula.Location = new System.Drawing.Point(158, 48);
-            this.textBoxVentas_Cedula.Multiline = true;
             this.textBoxVentas_Cedula.Name = "textBoxVentas_Cedula";
-            this.textBoxVentas_Cedula.Size = new System.Drawing.Size(215, 25);
+            this.textBoxVentas_Cedula.Size = new System.Drawing.Size(215, 26);
             this.textBoxVentas_Cedula.TabIndex = 3;
             this.textBoxVentas_Cedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxVentas_Cedula_KeyPress);
             // 
@@ -330,9 +329,8 @@
             this.textBoxVentas_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxVentas_Nombre.HideSelection = false;
             this.textBoxVentas_Nombre.Location = new System.Drawing.Point(158, 19);
-            this.textBoxVentas_Nombre.Multiline = true;
             this.textBoxVentas_Nombre.Name = "textBoxVentas_Nombre";
-            this.textBoxVentas_Nombre.Size = new System.Drawing.Size(285, 25);
+            this.textBoxVentas_Nombre.Size = new System.Drawing.Size(285, 26);
             this.textBoxVentas_Nombre.TabIndex = 1;
             this.textBoxVentas_Nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxVentas_Nombre_KeyPress);
             // 
@@ -498,7 +496,7 @@
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(722, 50);
+            this.label28.Location = new System.Drawing.Point(722, 53);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(76, 16);
             this.label28.TabIndex = 27;
@@ -508,10 +506,9 @@
             // 
             this.textBox_Ventas_Nabono.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Ventas_Nabono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.textBox_Ventas_Nabono.Location = new System.Drawing.Point(815, 43);
-            this.textBox_Ventas_Nabono.Multiline = true;
+            this.textBox_Ventas_Nabono.Location = new System.Drawing.Point(815, 46);
             this.textBox_Ventas_Nabono.Name = "textBox_Ventas_Nabono";
-            this.textBox_Ventas_Nabono.Size = new System.Drawing.Size(88, 28);
+            this.textBox_Ventas_Nabono.Size = new System.Drawing.Size(88, 31);
             this.textBox_Ventas_Nabono.TabIndex = 26;
             this.textBox_Ventas_Nabono.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_Ventas_Nabono.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_Ventas_Nabono_KeyDown);
@@ -532,9 +529,8 @@
             this.textBox_Ventas_Nfactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Ventas_Nfactura.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.textBox_Ventas_Nfactura.Location = new System.Drawing.Point(815, 12);
-            this.textBox_Ventas_Nfactura.Multiline = true;
             this.textBox_Ventas_Nfactura.Name = "textBox_Ventas_Nfactura";
-            this.textBox_Ventas_Nfactura.Size = new System.Drawing.Size(88, 28);
+            this.textBox_Ventas_Nfactura.Size = new System.Drawing.Size(88, 31);
             this.textBox_Ventas_Nfactura.TabIndex = 24;
             this.textBox_Ventas_Nfactura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_Ventas_Nfactura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Ventas_Nfactura_KeyPress);
@@ -576,9 +572,8 @@
             this.textBoxVentas_Cantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxVentas_Cantidad.ForeColor = System.Drawing.Color.Red;
             this.textBoxVentas_Cantidad.Location = new System.Drawing.Point(796, 137);
-            this.textBoxVentas_Cantidad.Multiline = true;
             this.textBoxVentas_Cantidad.Name = "textBoxVentas_Cantidad";
-            this.textBoxVentas_Cantidad.Size = new System.Drawing.Size(41, 45);
+            this.textBoxVentas_Cantidad.Size = new System.Drawing.Size(41, 49);
             this.textBoxVentas_Cantidad.TabIndex = 22;
             this.textBoxVentas_Cantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxVentas_Cantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxVentas_Cantidad_KeyPress);
@@ -598,9 +593,8 @@
             this.textBoxVentas_Anticipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxVentas_Anticipo.ForeColor = System.Drawing.Color.Red;
             this.textBoxVentas_Anticipo.Location = new System.Drawing.Point(538, 109);
-            this.textBoxVentas_Anticipo.Multiline = true;
             this.textBoxVentas_Anticipo.Name = "textBoxVentas_Anticipo";
-            this.textBoxVentas_Anticipo.Size = new System.Drawing.Size(166, 23);
+            this.textBoxVentas_Anticipo.Size = new System.Drawing.Size(166, 26);
             this.textBoxVentas_Anticipo.TabIndex = 19;
             this.textBoxVentas_Anticipo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxVentas_Anticipo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxVentas_Anticipo_KeyPress);
@@ -629,9 +623,8 @@
             // 
             this.textBoxVentas_Telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.textBoxVentas_Telefono.Location = new System.Drawing.Point(152, 106);
-            this.textBoxVentas_Telefono.Multiline = true;
             this.textBoxVentas_Telefono.Name = "textBoxVentas_Telefono";
-            this.textBoxVentas_Telefono.Size = new System.Drawing.Size(166, 25);
+            this.textBoxVentas_Telefono.Size = new System.Drawing.Size(166, 26);
             this.textBoxVentas_Telefono.TabIndex = 18;
             this.textBoxVentas_Telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxVentas_Telefono_KeyPress);
             // 
@@ -649,9 +642,8 @@
             // 
             this.textBoxVentas_Direccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.textBoxVentas_Direccion.Location = new System.Drawing.Point(152, 75);
-            this.textBoxVentas_Direccion.Multiline = true;
             this.textBoxVentas_Direccion.Name = "textBoxVentas_Direccion";
-            this.textBoxVentas_Direccion.Size = new System.Drawing.Size(215, 25);
+            this.textBoxVentas_Direccion.Size = new System.Drawing.Size(215, 26);
             this.textBoxVentas_Direccion.TabIndex = 16;
             this.textBoxVentas_Direccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxVentas_Direccion_KeyPress);
             // 
@@ -680,9 +672,8 @@
             this.textBoxVentas_Valor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxVentas_Valor.ForeColor = System.Drawing.Color.Red;
             this.textBoxVentas_Valor.Location = new System.Drawing.Point(538, 79);
-            this.textBoxVentas_Valor.Multiline = true;
             this.textBoxVentas_Valor.Name = "textBoxVentas_Valor";
-            this.textBoxVentas_Valor.Size = new System.Drawing.Size(166, 23);
+            this.textBoxVentas_Valor.Size = new System.Drawing.Size(166, 26);
             this.textBoxVentas_Valor.TabIndex = 9;
             this.textBoxVentas_Valor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxVentas_Valor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxVentas_Valor_KeyPress);
@@ -702,9 +693,8 @@
             this.textBoxVentas_CodigoVendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxVentas_CodigoVendedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.textBoxVentas_CodigoVendedor.Location = new System.Drawing.Point(616, 12);
-            this.textBoxVentas_CodigoVendedor.Multiline = true;
             this.textBoxVentas_CodigoVendedor.Name = "textBoxVentas_CodigoVendedor";
-            this.textBoxVentas_CodigoVendedor.Size = new System.Drawing.Size(88, 28);
+            this.textBoxVentas_CodigoVendedor.Size = new System.Drawing.Size(88, 31);
             this.textBoxVentas_CodigoVendedor.TabIndex = 11;
             this.textBoxVentas_CodigoVendedor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxVentas_CodigoVendedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxVentas_CodigoVendedor_KeyPress);
@@ -944,7 +934,7 @@
             // 
             this.label51.AutoSize = true;
             this.label51.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label51.Location = new System.Drawing.Point(713, 79);
+            this.label51.Location = new System.Drawing.Point(713, 83);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(101, 16);
             this.label51.TabIndex = 75;
@@ -954,12 +944,12 @@
             // 
             this.textBoxContratos_Consecutivos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxContratos_Consecutivos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.textBoxContratos_Consecutivos.Location = new System.Drawing.Point(816, 73);
-            this.textBoxContratos_Consecutivos.Multiline = true;
+            this.textBoxContratos_Consecutivos.Location = new System.Drawing.Point(816, 77);
             this.textBoxContratos_Consecutivos.Name = "textBoxContratos_Consecutivos";
-            this.textBoxContratos_Consecutivos.Size = new System.Drawing.Size(88, 28);
+            this.textBoxContratos_Consecutivos.Size = new System.Drawing.Size(88, 31);
             this.textBoxContratos_Consecutivos.TabIndex = 74;
             this.textBoxContratos_Consecutivos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxContratos_Consecutivos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxContratos_Consecutivos_KeyPress);
             // 
             // label50
             // 
@@ -976,10 +966,10 @@
             // 
             this.textBoxContratos_Cedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxContratos_Cedula.Location = new System.Drawing.Point(147, 44);
-            this.textBoxContratos_Cedula.Multiline = true;
             this.textBoxContratos_Cedula.Name = "textBoxContratos_Cedula";
-            this.textBoxContratos_Cedula.Size = new System.Drawing.Size(215, 25);
+            this.textBoxContratos_Cedula.Size = new System.Drawing.Size(215, 26);
             this.textBoxContratos_Cedula.TabIndex = 72;
+            this.textBoxContratos_Cedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxContratos_Cedula_KeyPress);
             // 
             // label5
             // 
@@ -995,10 +985,10 @@
             // 
             this.textBoxContratos_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxContratos_nombre.Location = new System.Drawing.Point(147, 11);
-            this.textBoxContratos_nombre.Multiline = true;
             this.textBoxContratos_nombre.Name = "textBoxContratos_nombre";
-            this.textBoxContratos_nombre.Size = new System.Drawing.Size(285, 25);
+            this.textBoxContratos_nombre.Size = new System.Drawing.Size(285, 26);
             this.textBoxContratos_nombre.TabIndex = 38;
+            this.textBoxContratos_nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxContratos_nombre_KeyPress);
             // 
             // label12
             // 
@@ -1069,7 +1059,7 @@
             // 
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(738, 48);
+            this.label40.Location = new System.Drawing.Point(738, 50);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(76, 16);
             this.label40.TabIndex = 62;
@@ -1083,17 +1073,18 @@
             this.textBoxContratos_Detalle.Name = "textBoxContratos_Detalle";
             this.textBoxContratos_Detalle.Size = new System.Drawing.Size(552, 45);
             this.textBoxContratos_Detalle.TabIndex = 43;
+            this.textBoxContratos_Detalle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxContratos_Detalle_KeyPress);
             // 
             // textBoxContratos_Nabono
             // 
             this.textBoxContratos_Nabono.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxContratos_Nabono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.textBoxContratos_Nabono.Location = new System.Drawing.Point(816, 42);
-            this.textBoxContratos_Nabono.Multiline = true;
+            this.textBoxContratos_Nabono.Location = new System.Drawing.Point(816, 44);
             this.textBoxContratos_Nabono.Name = "textBoxContratos_Nabono";
-            this.textBoxContratos_Nabono.Size = new System.Drawing.Size(88, 28);
+            this.textBoxContratos_Nabono.Size = new System.Drawing.Size(88, 31);
             this.textBoxContratos_Nabono.TabIndex = 61;
             this.textBoxContratos_Nabono.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxContratos_Nabono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxContratos_Nabono_KeyPress);
             // 
             // label41
             // 
@@ -1110,11 +1101,11 @@
             this.textBoxContratos_NFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxContratos_NFactura.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.textBoxContratos_NFactura.Location = new System.Drawing.Point(816, 11);
-            this.textBoxContratos_NFactura.Multiline = true;
             this.textBoxContratos_NFactura.Name = "textBoxContratos_NFactura";
-            this.textBoxContratos_NFactura.Size = new System.Drawing.Size(88, 28);
+            this.textBoxContratos_NFactura.Size = new System.Drawing.Size(88, 31);
             this.textBoxContratos_NFactura.TabIndex = 59;
             this.textBoxContratos_NFactura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxContratos_NFactura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxContratos_NFactura_KeyPress);
             // 
             // checkBoxContratos_Tarjeta
             // 
@@ -1153,17 +1144,17 @@
             this.textBoxContratos_Cantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxContratos_Cantidad.ForeColor = System.Drawing.Color.Red;
             this.textBoxContratos_Cantidad.Location = new System.Drawing.Point(816, 151);
-            this.textBoxContratos_Cantidad.Multiline = true;
             this.textBoxContratos_Cantidad.Name = "textBoxContratos_Cantidad";
-            this.textBoxContratos_Cantidad.Size = new System.Drawing.Size(41, 45);
+            this.textBoxContratos_Cantidad.Size = new System.Drawing.Size(41, 49);
             this.textBoxContratos_Cantidad.TabIndex = 57;
             this.textBoxContratos_Cantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxContratos_Cantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxContratos_Cantidad_KeyPress);
             // 
             // label43
             // 
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(472, 43);
+            this.label43.Location = new System.Drawing.Point(472, 46);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(59, 16);
             this.label43.TabIndex = 55;
@@ -1174,11 +1165,11 @@
             this.textBoxContratos_anticipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxContratos_anticipo.ForeColor = System.Drawing.Color.Red;
             this.textBoxContratos_anticipo.Location = new System.Drawing.Point(533, 99);
-            this.textBoxContratos_anticipo.Multiline = true;
             this.textBoxContratos_anticipo.Name = "textBoxContratos_anticipo";
-            this.textBoxContratos_anticipo.Size = new System.Drawing.Size(166, 23);
+            this.textBoxContratos_anticipo.Size = new System.Drawing.Size(166, 26);
             this.textBoxContratos_anticipo.TabIndex = 53;
             this.textBoxContratos_anticipo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxContratos_anticipo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxContratos_anticipo_KeyPress);
             // 
             // label44
             // 
@@ -1194,10 +1185,10 @@
             // 
             this.textBoxContratos_Telefonos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.textBoxContratos_Telefonos.Location = new System.Drawing.Point(147, 110);
-            this.textBoxContratos_Telefonos.Multiline = true;
             this.textBoxContratos_Telefonos.Name = "textBoxContratos_Telefonos";
-            this.textBoxContratos_Telefonos.Size = new System.Drawing.Size(166, 25);
+            this.textBoxContratos_Telefonos.Size = new System.Drawing.Size(166, 26);
             this.textBoxContratos_Telefonos.TabIndex = 52;
+            this.textBoxContratos_Telefonos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxContratos_Telefonos_KeyPress);
             // 
             // label45
             // 
@@ -1213,10 +1204,10 @@
             // 
             this.textBoxContratos_Direcciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.textBoxContratos_Direcciones.Location = new System.Drawing.Point(147, 79);
-            this.textBoxContratos_Direcciones.Multiline = true;
             this.textBoxContratos_Direcciones.Name = "textBoxContratos_Direcciones";
-            this.textBoxContratos_Direcciones.Size = new System.Drawing.Size(215, 25);
+            this.textBoxContratos_Direcciones.Size = new System.Drawing.Size(215, 26);
             this.textBoxContratos_Direcciones.TabIndex = 49;
+            this.textBoxContratos_Direcciones.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxContratos_Direcciones_KeyPress);
             // 
             // label46
             // 
@@ -1243,11 +1234,11 @@
             this.textBoxContratos_Valor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxContratos_Valor.ForeColor = System.Drawing.Color.Red;
             this.textBoxContratos_Valor.Location = new System.Drawing.Point(533, 70);
-            this.textBoxContratos_Valor.Multiline = true;
             this.textBoxContratos_Valor.Name = "textBoxContratos_Valor";
-            this.textBoxContratos_Valor.Size = new System.Drawing.Size(166, 23);
+            this.textBoxContratos_Valor.Size = new System.Drawing.Size(166, 26);
             this.textBoxContratos_Valor.TabIndex = 44;
             this.textBoxContratos_Valor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxContratos_Valor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxContratos_Valor_KeyPress);
             // 
             // label48
             // 
@@ -1264,11 +1255,11 @@
             this.textBoxContratos_CodigoVendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxContratos_CodigoVendedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.textBoxContratos_CodigoVendedor.Location = new System.Drawing.Point(612, 11);
-            this.textBoxContratos_CodigoVendedor.Multiline = true;
             this.textBoxContratos_CodigoVendedor.Name = "textBoxContratos_CodigoVendedor";
-            this.textBoxContratos_CodigoVendedor.Size = new System.Drawing.Size(88, 28);
+            this.textBoxContratos_CodigoVendedor.Size = new System.Drawing.Size(88, 31);
             this.textBoxContratos_CodigoVendedor.TabIndex = 46;
             this.textBoxContratos_CodigoVendedor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxContratos_CodigoVendedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxContratos_CodigoVendedor_KeyPress);
             // 
             // label49
             // 
@@ -1285,7 +1276,7 @@
             this.dateTimePickerContratos.Checked = false;
             this.dateTimePickerContratos.CustomFormat = "yyy-MM-dd";
             this.dateTimePickerContratos.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerContratos.Location = new System.Drawing.Point(533, 42);
+            this.dateTimePickerContratos.Location = new System.Drawing.Point(533, 45);
             this.dateTimePickerContratos.Name = "dateTimePickerContratos";
             this.dateTimePickerContratos.Size = new System.Drawing.Size(166, 20);
             this.dateTimePickerContratos.TabIndex = 56;

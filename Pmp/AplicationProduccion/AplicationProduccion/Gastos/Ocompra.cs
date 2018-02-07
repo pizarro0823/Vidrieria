@@ -43,7 +43,7 @@ namespace AplicationProduccion.Gastos
                 {
                     cnx.conexionDB("insert into compras values ('" + textBoxNoFactura.Text.ToUpper().Trim() + "','" + textBoxAlmacen.Text.ToUpper().Trim() + "','" + textBoxNit.Text.ToUpper() + "','" + textBoxDescripcion.Text.ToUpper().Trim() + "'," + textBoxCantidad.Text.Trim() + "," + textBoxValor.Text.Trim().Replace(".", "") + ",GETDATE(),'" + comboBoxRaiz.Text.Trim() + "','"+comboBoxClasificacion.Text.Trim()+"','"+comboBoxEstado.Text.Trim()+"')");
                     MessageBox.Show("Campos Ingresados Correctamente");
-                    dataGridView1.DataSource = cnx.conexionDBR("select   Nombre_Almacen, Nit_Empresa, Descripcion_Mercancia, cantidad_ingreso, REPLACE(CONVERT(VARCHAR, CONVERT(Money, valor_unitario), 1), '.00', '') as Valor, fecha_ingreso,Raiz,clasificacion,estado from compras where fecha_ingreso ='"+dateTimePicker.Text+"' ");
+                    dataGridView1.DataSource = cnx.conexionDBR("select  Nombre_Almacen, Nit_Empresa, Descripcion_Mercancia, cantidad_ingreso, REPLACE(CONVERT(VARCHAR, CONVERT(Money, valor_unitario), 1), '.00', '') as Valor, fecha_ingreso,Raiz,clasificacion,estado from compras where fecha_ingreso ='"+dateTimePicker.Text+"' ");
 
                 }
 
@@ -100,9 +100,7 @@ namespace AplicationProduccion.Gastos
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            AplicationProduccion.Gastos.BuscarCompras BuscarOrdenCompra = new BuscarCompras();
-            BuscarOrdenCompra.Show();
+            dataGridView1.DataSource = cnx.conexionDBR("select Nombre_Almacen,Nit_Empresa,cantidad_ingreso,Raiz,clasificacion,Estado from compras where Nombre_Almacen like '%"+textBoxAlmacen.Text+"%'");
         }
 
         public void llenarCombobox()
