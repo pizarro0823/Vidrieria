@@ -146,6 +146,7 @@ namespace AplicationProduccion.Ingresos
             AplicationProduccion.Inicio.Alvidrios Inicio = new AplicationProduccion.Inicio.Alvidrios();
             Inicio.Show();
         }
+        #region Salto de texbox en Ventas
         private void textBoxVentas_Nombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
