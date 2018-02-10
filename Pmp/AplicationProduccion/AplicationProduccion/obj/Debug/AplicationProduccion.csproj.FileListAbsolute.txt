@@ -72,5 +72,4 @@ C:\Users\Cristian\Desktop\proyectos\SistemaContableVidrieria\Vidrieria\Pmp\Aplic
 C:\Users\Cristian\Desktop\proyectos\SistemaContableVidrieria\Vidrieria\Pmp\AplicationProduccion\AplicationProduccion\bin\Debug\PagedList.xml
 C:\Users\Cristian\Desktop\proyectos\SistemaContableVidrieria\Vidrieria\Pmp\AplicationProduccion\AplicationProduccion\bin\Debug\Dapper.dll
 C:\Users\Cristian\Desktop\proyectos\SistemaContableVidrieria\Vidrieria\Pmp\AplicationProduccion\AplicationProduccion\bin\Debug\Dapper.xml
-C:\Users\Cristian\Desktop\proyectos\SistemaContableVidrieria\Vidrieria\Pmp\AplicationProduccion\AplicationProduccion\obj\Debug\AplicationProduccion.Inicio.Login.resources
 C:\Users\Cristian\Desktop\proyectos\SistemaContableVidrieria\Vidrieria\Pmp\AplicationProduccion\AplicationProduccion\obj\Debug\AplicationProduccion.Ingresos.DetalleIngreso.resources

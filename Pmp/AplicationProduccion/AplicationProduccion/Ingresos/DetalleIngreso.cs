@@ -26,12 +26,12 @@ namespace AplicationProduccion.Ingresos
             {
                 dataGridView1.DataSource = cnx.conexionDBR("select nombreCliente,cedula,Direccion,Telefono,Detalle,Codigo_Vendedor,Fecha_Factura,Numero_factura,Fecha_Anticipo,Numero_anticipo,Valor,Anticipo,Modo_de_pago from Ventas_Diarias");
             }
-            else if (checkBoxFiltrado_Especial.Checked == true )
+            else if (checkBoxFiltrado_Especial.Checked == true)
             {
                 dataGridView1.DataSource = cnx.conexionDBR("select  Numero_factura,nombreCliente,count(*) as Numero_de_facturas,Valor,sum(Anticipo) as abonos, (valor-sum(Anticipo)) as Restante from Ventas_Diarias GROUP BY Numero_factura, Valor, nombreCliente");
             }
 
-            
+
 
         }
 
@@ -45,6 +45,45 @@ namespace AplicationProduccion.Ingresos
 
         }
 
- 
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (checkBoxFiltrado_Especial.Checked==true)
+            {
+                dataGridView1.ClearSelection();
+
+                try
+                {
+                    if ((int)this.dataGridView1.Rows[e.RowIndex].Cells["Restante"].Value > 0)
+                    {
+                        foreach (DataGridViewCell celda in this.dataGridView1.Rows[e.RowIndex].Cells)
+                        {
+                            celda.Style.BackColor = Color.Red;
+                        }
+                    }
+                    if ((int)this.dataGridView1.Rows[e.RowIndex].Cells["Restante"].Value < 0)
+                    {
+                        foreach (DataGridViewCell celda in this.dataGridView1.Rows[e.RowIndex].Cells)
+                        {
+                            celda.Style.BackColor = Color.Yellow;
+                        }
+                    }
+                }
+                catch (System.NullReferenceException)
+                {
+
+                }
+                catch (System.ArgumentException)
+                {
+
+                }
+            }
+
+         
+        }
     }
 }
