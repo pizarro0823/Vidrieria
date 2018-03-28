@@ -29,14 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Consultar));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textBoxIngresarBusqueda = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.metroRadioButton1 = new MetroFramework.Controls.MetroRadioButton();
-            this.metroRadioButton2 = new MetroFramework.Controls.MetroRadioButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.metro = new MetroFramework.Controls.MetroButton();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxMedida = new System.Windows.Forms.TextBox();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
@@ -44,8 +40,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -57,10 +51,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxIngresarBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxIngresarBusqueda.Location = new System.Drawing.Point(11, 35);
+            this.textBoxIngresarBusqueda.Location = new System.Drawing.Point(18, 34);
             this.textBoxIngresarBusqueda.Multiline = true;
             this.textBoxIngresarBusqueda.Name = "textBoxIngresarBusqueda";
-            this.textBoxIngresarBusqueda.Size = new System.Drawing.Size(230, 45);
+            this.textBoxIngresarBusqueda.Size = new System.Drawing.Size(230, 59);
             this.textBoxIngresarBusqueda.TabIndex = 1;
             // 
             // label1
@@ -70,60 +64,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 12);
+            this.label1.Location = new System.Drawing.Point(14, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Buscar:";
-            // 
-            // metroRadioButton1
-            // 
-            this.metroRadioButton1.AutoSize = true;
-            this.metroRadioButton1.Location = new System.Drawing.Point(16, 44);
-            this.metroRadioButton1.Name = "metroRadioButton1";
-            this.metroRadioButton1.Size = new System.Drawing.Size(78, 15);
-            this.metroRadioButton1.TabIndex = 4;
-            this.metroRadioButton1.TabStop = true;
-            this.metroRadioButton1.Text = "Referencia";
-            this.metroRadioButton1.UseSelectable = true;
-            // 
-            // metroRadioButton2
-            // 
-            this.metroRadioButton2.AutoSize = true;
-            this.metroRadioButton2.Location = new System.Drawing.Point(135, 44);
-            this.metroRadioButton2.Name = "metroRadioButton2";
-            this.metroRadioButton2.Size = new System.Drawing.Size(64, 15);
-            this.metroRadioButton2.TabIndex = 5;
-            this.metroRadioButton2.TabStop = true;
-            this.metroRadioButton2.Text = "Sistema";
-            this.metroRadioButton2.UseSelectable = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.metroRadioButton2);
-            this.groupBox1.Controls.Add(this.metroRadioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(13, 265);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(230, 77);
-            this.groupBox1.TabIndex = 6;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Buscar Por:";
-            // 
-            // metro
-            // 
-            this.metro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.metro.Location = new System.Drawing.Point(112, 205);
-            this.metro.Name = "metro";
-            this.metro.Size = new System.Drawing.Size(28, 37);
-            this.metro.TabIndex = 7;
-            this.metro.Text = "?";
-            this.metro.UseSelectable = true;
-            this.metro.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // label2
             // 
@@ -132,7 +77,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(7, 110);
+            this.label2.Location = new System.Drawing.Point(14, 104);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 24);
             this.label2.TabIndex = 9;
@@ -144,10 +89,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxMedida.Location = new System.Drawing.Point(83, 96);
+            this.textBoxMedida.Location = new System.Drawing.Point(18, 131);
             this.textBoxMedida.Multiline = true;
             this.textBoxMedida.Name = "textBoxMedida";
-            this.textBoxMedida.Size = new System.Drawing.Size(158, 51);
+            this.textBoxMedida.Size = new System.Drawing.Size(230, 54);
             this.textBoxMedida.TabIndex = 10;
             this.textBoxMedida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -156,7 +101,7 @@
             this.metroButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroButton2.Location = new System.Drawing.Point(11, 166);
+            this.metroButton2.Location = new System.Drawing.Point(18, 324);
             this.metroButton2.Name = "metroButton2";
             this.metroButton2.Size = new System.Drawing.Size(230, 33);
             this.metroButton2.TabIndex = 3;
@@ -167,12 +112,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.textBoxIngresarBusqueda);
-            this.panel1.Controls.Add(this.metro);
             this.panel1.Controls.Add(this.metroButton2);
-            this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.textBoxMedida);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(5, 49);
@@ -194,8 +136,8 @@
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -205,9 +147,9 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(276, 49);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.Size = new System.Drawing.Size(531, 366);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.Size = new System.Drawing.Size(531, 357);
             this.dataGridView1.TabIndex = 13;
             // 
             // label3
@@ -219,16 +161,6 @@
             this.label3.Size = new System.Drawing.Size(137, 24);
             this.label3.TabIndex = 14;
             this.label3.Text = "- Consulta Inv";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(148, 205);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 37);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Consultar
             // 
@@ -243,8 +175,6 @@
             this.Name = "Consultar";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Silver;
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -257,10 +187,6 @@
         #endregion
         private System.Windows.Forms.TextBox textBoxIngresarBusqueda;
         private System.Windows.Forms.Label label1;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton1;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton2;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private MetroFramework.Controls.MetroButton metro;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxMedida;
         private MetroFramework.Controls.MetroButton metroButton2;
@@ -268,6 +194,5 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
     }
 }

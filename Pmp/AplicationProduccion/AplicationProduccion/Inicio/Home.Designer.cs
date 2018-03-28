@@ -39,7 +39,7 @@
             this.metroTile7 = new MetroFramework.Controls.MetroTile();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.metroTile8 = new MetroFramework.Controls.MetroTile();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -147,7 +147,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(214, 389);
+            this.label1.Location = new System.Drawing.Point(25, 389);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 13);
             this.label1.TabIndex = 8;
@@ -157,28 +157,32 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(338, 389);
+            this.label2.Location = new System.Drawing.Point(149, 389);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 9;
             // 
-            // label3
+            // metroTile8
             // 
-            this.label3.AutoSize = true;
-            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label3.Location = new System.Drawing.Point(353, 17);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Opciones";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.metroTile8.ActiveControl = null;
+            this.metroTile8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.metroTile8.Location = new System.Drawing.Point(169, 314);
+            this.metroTile8.Name = "metroTile8";
+            this.metroTile8.Size = new System.Drawing.Size(92, 54);
+            this.metroTile8.Style = MetroFramework.MetroColorStyle.Silver;
+            this.metroTile8.TabIndex = 11;
+            this.metroTile8.Text = ":::Estados:::";
+            this.metroTile8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile8.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile8.TileImage")));
+            this.metroTile8.UseSelectable = true;
+            this.metroTile8.Click += new System.EventHandler(this.metroTile8_Click);
             // 
             // Alvidrios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(432, 413);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.metroTile8);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.metroTile7);
@@ -211,6 +215,6 @@
         private MetroFramework.Controls.MetroTile metroTile7;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private MetroFramework.Controls.MetroTile metroTile8;
     }
 }

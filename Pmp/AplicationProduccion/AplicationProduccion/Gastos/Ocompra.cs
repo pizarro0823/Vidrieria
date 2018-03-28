@@ -41,7 +41,7 @@ namespace AplicationProduccion.Gastos
                 }
                 else
                 {
-                    cnx.conexionDB("insert into compras values ('" + textBoxNoFactura.Text.ToUpper().Trim() + "','" + textBoxAlmacen.Text.ToUpper().Trim() + "','" + textBoxNit.Text.ToUpper() + "','" + textBoxDescripcion.Text.ToUpper().Trim() + "'," + textBoxCantidad.Text.Trim() + "," + textBoxValor.Text.Trim().Replace(".", "") + ",GETDATE(),'" + comboBoxRaiz.Text.Trim() + "','"+comboBoxClasificacion.Text.Trim()+"','"+comboBoxEstado.Text.Trim()+"')");
+                    cnx.conexionDB("insert into compras values ('" + textBoxNoFactura.Text.ToUpper().Trim() + "','" + textBoxAlmacen.Text.ToUpper().Trim() + "','" + textBoxNit.Text.ToUpper() + "','" + textBoxDescripcion.Text.ToUpper().Trim() + "'," + textBoxCantidad.Text.Trim() + "," + textBoxValor.Text.Trim().Replace(".", "") + ",'"+dateTimePicker.Text+"','" + comboBoxRaiz.Text.Trim() + "','"+comboBoxClasificacion.Text.Trim()+"','"+comboBoxEstado.Text.Trim()+"')");
                     MessageBox.Show("Campos Ingresados Correctamente");
                     dataGridView1.DataSource = cnx.conexionDBR("select  Nombre_Almacen, Nit_Empresa, Descripcion_Mercancia, cantidad_ingreso, REPLACE(CONVERT(VARCHAR, CONVERT(Money, valor_unitario), 1), '.00', '') as Valor, fecha_ingreso,Raiz,clasificacion,estado from compras where fecha_ingreso ='"+dateTimePicker.Text+"' ");
 

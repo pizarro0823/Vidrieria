@@ -77,6 +77,11 @@ namespace AplicationProduccion.Inicio
 
         private void label3_Click(object sender, EventArgs e)
         {
+           
+        }
+
+        private void metroTile8_Click(object sender, EventArgs e)
+        {
             this.Hide();
             AplicationProduccion.Ingresos.DetalleIngreso dingreso = new Ingresos.DetalleIngreso();
             dingreso.Show();

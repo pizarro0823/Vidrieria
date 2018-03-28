@@ -133,6 +133,8 @@
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.buttonRegistar = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.textBox1_Borrar = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -187,6 +189,8 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.label30);
             this.tabPage1.Controls.Add(this.label29);
             this.tabPage1.Controls.Add(this.label19);
@@ -201,7 +205,6 @@
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.dataGridView3);
-            this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -349,6 +352,7 @@
             this.groupBox1.Controls.Add(this.label39);
             this.groupBox1.Controls.Add(this.label38);
             this.groupBox1.Controls.Add(this.label37);
+            this.groupBox1.Controls.Add(this.textBox1_Borrar);
             this.groupBox1.Controls.Add(this.label36);
             this.groupBox1.Controls.Add(this.label35);
             this.groupBox1.Controls.Add(this.label34);
@@ -1372,6 +1376,26 @@
             this.dataGridView2.TabIndex = 11;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
+            // textBox1_Borrar
+            // 
+            this.textBox1_Borrar.Enabled = false;
+            this.textBox1_Borrar.Location = new System.Drawing.Point(867, 82);
+            this.textBox1_Borrar.Multiline = true;
+            this.textBox1_Borrar.Name = "textBox1_Borrar";
+            this.textBox1_Borrar.Size = new System.Drawing.Size(36, 20);
+            this.textBox1_Borrar.TabIndex = 37;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Location = new System.Drawing.Point(496, 373);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(120, 35);
+            this.button2.TabIndex = 17;
+            this.button2.Text = "Delete";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Facturador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1510,5 +1534,7 @@
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.Label label57;
         private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.TextBox textBox1_Borrar;
+        private System.Windows.Forms.Button button2;
     }
 }

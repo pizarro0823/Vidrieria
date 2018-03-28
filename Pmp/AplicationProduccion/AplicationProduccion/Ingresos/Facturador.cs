@@ -72,13 +72,33 @@ namespace AplicationProduccion.Ingresos
         {
             textBoxVentas_Nombre.Text = dataGridView1.CurrentRow.Cells["nombreCliente"].Value.ToString();
             textBoxVentas_Cedula.Text = dataGridView1.CurrentRow.Cells["cedula"].Value.ToString();
-            textBoxVentas_Direccion.Text = dataGridView1.CurrentRow.Cells["Direccion"].Value.ToString();
-            textBoxVentas_Telefono.Text = dataGridView1.CurrentRow.Cells["Telefono"].Value.ToString();
-            textBoxVentas_Detalle.Text = dataGridView1.CurrentRow.Cells["Detalle"].Value.ToString();
-            textBoxVentas_Valor.Text = dataGridView1.CurrentRow.Cells["Valor"].Value.ToString();
-            textBoxVentas_Cantidad.Text = dataGridView1.CurrentRow.Cells["Cantidad"].Value.ToString();
-            textBox_Ventas_Nfactura.Text = dataGridView1.CurrentRow.Cells["Numero_factura"].Value.ToString();
+            textBoxVentas_Direccion.Text = dataGridView1.CurrentRow.Cells["direccion"].Value.ToString();
+            textBoxVentas_Telefono.Text = dataGridView1.CurrentRow.Cells["telefono"].Value.ToString();
+            textBoxVentas_Detalle.Text = dataGridView1.CurrentRow.Cells["detalle"].Value.ToString();
+            textBoxVentas_Valor.Text = dataGridView1.CurrentRow.Cells["valorObra"].Value.ToString();
+            textBoxVentas_Cantidad.Text = dataGridView1.CurrentRow.Cells["cantidad"].Value.ToString();
+            textBox_Ventas_Nfactura.Text = dataGridView1.CurrentRow.Cells["NumeroFactura"].Value.ToString();
+            textBox1_Borrar.Text = dataGridView1.CurrentRow.Cells["id"].Value.ToString();
 
+        }
+
+        public void EliminarCamposTexbox()
+        {
+            textBoxVentas_Anticipo.Clear();
+            textBoxVentas_Cantidad.Clear();
+            textBoxVentas_Cedula.Clear();
+            textBoxVentas_CodigoVendedor.Clear();
+            textBoxVentas_Detalle.Clear();
+            textBoxVentas_Direccion.Clear();
+            textBoxVentas_Nombre.Clear();
+            textBoxVentas_Telefono.Clear();
+            textBoxVentas_Valor.Clear();
+            textBox_Ventas_Nabono.Clear();
+            textBox_Ventas_Nfactura.Clear();
+            textBox1_Borrar.Clear();
+            label30.Text = "";
+            label19.Text = "";
+            label6.Text = "";
         }
 
 
@@ -96,7 +116,7 @@ namespace AplicationProduccion.Ingresos
                 else
                 {
 
-                    dataGridView1.DataSource = cnx.conexionDBR("select Numero_factura,Numero_anticipo,nombreCliente,cedula,Direccion,Telefono,Detalle,Codigo_Vendedor,fecha_factura,Valor,Anticipo,Cantidad,Modo_de_pago,Estado,fecha_anticipo" +
+                    dataGridView1.DataSource = cnx.conexionDBR("select NumeroFactura,NumeroAbono,nombreCliente,cedula,direccion,telefono,Detalle,Vendedor,fechaIngreso,valorObra,anticipoObra,cantidad,FormaPago,fechaAnticipo,id" +
                                                         " from Ventas_Diarias where nombreCliente like '%" + textBoxVentas_Nombre.Text + "%'");
                 }
                 if (string.IsNullOrEmpty(textBox_Ventas_Nfactura.Text))
@@ -105,18 +125,18 @@ namespace AplicationProduccion.Ingresos
                 }
                 else
                 {
-                    dataGridView1.DataSource = cnx.conexionDBR("select Numero_factura,Numero_anticipo,nombreCliente,cedula,Direccion,Telefono,Detalle,Codigo_Vendedor,fecha_factura,Valor,Anticipo,Cantidad,Modo_de_pago,Estado,fecha_anticipo" +
-                                                     " from Ventas_Diarias where Numero_factura = " + textBox_Ventas_Nfactura.Text + "");
+                    dataGridView1.DataSource = cnx.conexionDBR("select NumeroFactura,NumeroAbono,nombreCliente,cedula,Direccion,Telefono,Detalle,Vendedor,fechaIngreso,valorObra,anticipoObra,Cantidad,FormaPago,fechaAnticipo,id" +
+                                                     " from Ventas_Diarias where NumeroFactura = " + textBox_Ventas_Nfactura.Text + "");
 
                     ///Este datagrid View esta oculto detras del datagridview1
                     ///Solo se utiliza como ayuda para poder mostrar el valor de restante
-                    dataGridView3.DataSource = cnx.conexionDBR("select  Numero_factura,count(*) as Numero_de_facturas,Valor,sum(Anticipo) as abonos, (valor-sum(Anticipo)) as Restante" +
-                                                               " from Ventas_Diarias where Numero_factura = " + textBox_Ventas_Nfactura.Text + " GROUP BY Numero_factura, Valor");
+                    dataGridView3.DataSource = cnx.conexionDBR("select  NumeroFactura,count(*) as Numero_de_facturas,valorObra,sum(anticipoObra) as abonos, (valorObra-sum(anticipoObra)) as Restante" +
+                                                               " from Ventas_Diarias where NumeroFactura = " + textBox_Ventas_Nfactura.Text + " GROUP BY NumeroFactura, valorObra");
 
-                    label6.Text = "" + dataGridView1.Rows.Cast<DataGridViewRow>().Max(x => Convert.ToInt32(x.Cells["Valor"].Value)).ToString("0,0");
-                    label19.Text = "" + dataGridView1.Rows.Cast<DataGridViewRow>().Sum(x => Convert.ToInt32(x.Cells["Anticipo"].Value)).ToString("0,0");
+                    label6.Text = "" + dataGridView1.Rows.Cast<DataGridViewRow>().Max(x => Convert.ToInt32(x.Cells["valorObra"].Value)).ToString("0,0");
+                    label19.Text = "" + dataGridView1.Rows.Cast<DataGridViewRow>().Sum(x => Convert.ToInt32(x.Cells["anticipoObra"].Value)).ToString("0,0");
                     label30.Text = "" + dataGridView3.Rows.Cast<DataGridViewRow>().Max(x => Convert.ToInt32(x.Cells["Restante"].Value)).ToString("0,0");
-                    this.dataGridView1.Columns["Valor"].Visible = false;
+                    this.dataGridView1.Columns["valorObra"].Visible = false;
 
                 }
             }
@@ -128,27 +148,23 @@ namespace AplicationProduccion.Ingresos
 
         }
 
+        public void BorrarDatos()
+        {
+            cnx.conexionDBR("delete from ventas_diarias where id = "+textBox1_Borrar.Text+"");
+            EliminarCamposTexbox();
+            MessageBox.Show("Campo Eliminado Correctamente...");
+        }
+
+
+
+
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            textBoxVentas_Anticipo.Clear();
-            textBoxVentas_Cantidad.Clear();
-            textBoxVentas_Cedula.Clear();
-            textBoxVentas_CodigoVendedor.Clear();
-            textBoxVentas_Detalle.Clear();
-            textBoxVentas_Direccion.Clear();
-            textBoxVentas_Nombre.Clear();
-            textBoxVentas_Telefono.Clear();
-            textBoxVentas_Valor.Clear();
-            textBox_Ventas_Nabono.Clear();
-            textBox_Ventas_Nfactura.Clear();
-            label30.Text = "";
-            label19.Text = "";
-            label6.Text = "";
-
+            EliminarCamposTexbox();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -370,9 +386,9 @@ namespace AplicationProduccion.Ingresos
             textBoxContratos_Direcciones.Text = dataGridView2.CurrentRow.Cells["Direccion"].Value.ToString();
             textBoxContratos_Telefonos.Text = dataGridView2.CurrentRow.Cells["Telefono"].Value.ToString();
             textBoxContratos_Detalle.Text = dataGridView2.CurrentRow.Cells["Detalle"].Value.ToString();
-            textBoxContratos_Valor.Text = dataGridView2.CurrentRow.Cells["Valor"].Value.ToString();
+            textBoxContratos_Valor.Text = dataGridView2.CurrentRow.Cells["valorObra"].Value.ToString();
             textBoxContratos_Cantidad.Text = dataGridView2.CurrentRow.Cells["Cantidad"].Value.ToString();
-            textBoxContratos_NFactura.Text = dataGridView2.CurrentRow.Cells["Numero_factura"].Value.ToString();
+            textBoxContratos_NFactura.Text = dataGridView2.CurrentRow.Cells["NumeroFactura"].Value.ToString();
             textBoxContratos_Consecutivos.Text = dataGridView2.CurrentRow.Cells["N_Cosecutivo_Contrato"].Value.ToString();
 
         }
@@ -558,6 +574,9 @@ namespace AplicationProduccion.Ingresos
 
         }
 
-
+        private void button2_Click(object sender, EventArgs e)
+        {
+            BorrarDatos();
+        }
     }
 }
